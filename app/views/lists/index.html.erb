@@ -1,14 +1,29 @@
-<h2>My Lists</h2>
-<p><%= link_to 'Create a List', new_list_path %>
-<% @lists.each do |list| %>
-  <%= link_to list_path(list) do %>
-  <p><%= list.name %></p>
-  <% end %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(assets/images/movie_time.jpg);">
+  <div class="container">
+    <h1>MovieLists</h1>
+    <p>Watch a movie and Enjoy :)</p>
+    <%= link_to "Create a List", new_list_path, class: "btn btn-gradient" %>
+  </div>
+</div>
 
+
+<h2 class="container">My Lists</h2>
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+    <div class="container">
+    <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('movie_time.jpg') %>)">
+    <p><%= list.name %></p>
+    </div>
+    <% end %>
+  <% end %>
+
+<% if false %>
+<div class="container">
 <h2>Movies</h2>
 <% @movies = Movie.all %>
 <% @movies.each do |movie| %>
-  <p><%= movie.title %></p><
-  p><%= movie.poster_url %></p>
+  <p><%= movie.title %></p>
+  <p><%= movie.poster_url %></p>
+<% end %>
+</div>
 <% end %>
