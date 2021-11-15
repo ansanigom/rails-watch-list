@@ -1,0 +1,35 @@
+<div class="banner popcorn" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('popcorn.jpg') %>);">
+  <div class="container">
+    <h1>MOVIE LISTS</h1>
+    <p>Grab yourself a box of popcorn!</p>
+    <%= link_to "Create a List", new_list_path, class: "btn btn-ghost" %>
+  </div>
+</div>
+
+
+
+    <div class="item">
+  <% @lists.sample(4).each do |list| %>
+    <%= link_to list_path(list) do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('movie_time.jpg') %>)">
+    <p><%= list.name %></p>
+    <% end %>
+    </div>
+  <% end %>
+    </div>
+
+
+
+  <p class="third"><%= link_to "More...", lists_path, class:"no-underline"%></p>
+
+
+<% if false %>
+<div class="container">
+<h2>Movies</h2>
+<% @movies = Movie.all %>
+<% @movies.each do |movie| %>
+  <p><%= movie.title %></p>
+  <p><%= movie.poster_url %></p>
+<% end %>
+</div>
+<% end %>

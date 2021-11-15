@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchList</title>
+    <title>Eiga Lists</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <%= link_to "★", lists_path, class: "navbar-brand"%>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+      <%= link_to "★★★★★", root_path, class: "navbar-brand"%>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Create", new_list_path, class: "nav-link" %>
+            <%= link_to "LISTS", lists_path, class: "nav-link" %>
+          <li class="nav-item active">
+            <%= link_to "➕ADD", new_list_path, class: "nav-link" %>
           </li>
         </ul>
       </div>
     </div>
-
     <%= yield %>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.autoplay').slick({
+          dots: true
+        });
+      });
+    </script>
+
   </body>
 </html>

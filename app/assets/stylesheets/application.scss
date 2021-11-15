@@ -12,46 +12,93 @@
 @import "components/index";
 @import "pages/index";
 
+@import "slick/slick-theme.css";
+
+// home
+
+  body {
+    background-color: black;
+  }
+  h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 20px;
+    color: white;
+    opacity: .7;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  a{
+    text-decoration:none;
+  }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  padding-bottom: 20p;
+  z-index:1000;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+
+// banner
+
 .banner {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  animation: move 20s infinite both;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-bottom: 10px;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+@keyframes move{
+  0% {
+    background-size:100% auto;
+  }
+  50% {
+    background-size:140% auto;
+  }
+  100% {
+    background-size:100% auto;
+  }
 }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-
-.btn-gradient {
-  color: white;
+.btn-ghost {
+  color: #FFF;
+  border: 1px solid #FFF;
   padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
+.btn-ghost:hover {
+  transition: 1s;
+  opacity: 1;
+  background-color: #FFF;
 }
+
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 300px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,4 +108,44 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 25px;
 }
+
+  .item {
+  display: inline-flex;
+  margin: 5px;
+  padding: 10px;;
+  }
+
+
+  .navbar-brand {
+    color: white;
+  }
+
+
+  .third {
+  text-decoration:none;
+  border-color: #721919;
+  color: #fff;
+  box-shadow: 0 0 40px 40px black inset, 0 0 0 0 #721919;
+  transition: all 150ms ease-in-out;
+  width: 170px;
+  height: 50px;
+  text-align: center;
+
+
+  &:hover {
+    box-shadow: 0 0 10px 0 #721919 inset, 0 0 10px 4px #721919;
+  }
+}
+
+  .no-underline {
+    text-decoration:none !important;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+
+    &:hover{
+      color: #fff;
+    }
+  }

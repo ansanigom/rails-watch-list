@@ -21,6 +21,10 @@ class ListsController < ApplicationController
       end
   end
 
+  def home
+    @lists = List.all
+  end
+
   private
   def find_list
     @list = List.find(params[:id])
